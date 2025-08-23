@@ -6,50 +6,54 @@ class IntStack {
     int *data;
 
     public:
-    IntStack(int capacity) {
-        this->capacity = capacity;
-        topIndex = -1;
-        data = new int[capacity];
-    }
-
-    bool push(int value) {
-        if (topIndex >= capacity - 1) {
-            cout << "Stack Overflow\n";
-            return false;
+        IntStack(int cap) {
+            this->capacity = cap;
+            topIndex = -1;
+            data = new int[cap];
         }
-        //topIndex = topIndex + 1;
-        data[++topIndex] = value;
-        return true;
-    }
 
-    int pop() {
-        if (topIndex < 0) {
-        cout << "Stack Underflow\n";
-        return 0;
+        ~IntStack() {
+            delete[] data;
         }
-        return data[topIndex--];
-    }
 
-    int peek() {
-        if (topIndex < 0) {
-        cout << "Stack is Empty\n";
-        return 0;
+        bool push(int value) {
+            if (topIndex >= capacity - 1) {
+                cout << "Stack Overflow\n";
+                return false;
+            }
+            //topIndex = topIndex + 1;
+            data[++topIndex] = value;
+            return true;
         }
-        return data[topIndex];
-    }
 
-    bool isEmpty() {
-        return topIndex < 0;
-    }
+        int pop() {
+            if (topIndex < 0) {
+            cout << "Stack Underflow\n";
+            return 0;
+            }
+            return data[topIndex--];
+        }
+
+        int peek() {
+            if (topIndex < 0) {
+            cout << "Stack is Empty\n";
+            return 0;
+            }
+            return data[topIndex];
+        }
+
+        bool isEmpty() {
+            return topIndex < 0;
+        }
 };
 
 int main() {
     IntStack stack(5);
-    stack.push(10);
-    stack.push(20);
-    stack.push(30);
+    stack.push(100);
+    stack.push(200);
+    stack.push(300);
 
-    cout << stack.pop() << " popped from stack\n";
+    cout << "the element" << stack.pop() << " popped from stack\n";
     cout << "Top element is: " << stack.peek() << endl;
 
     cout << "Elements present in stack: ";
