@@ -10,7 +10,7 @@ int main(){
     vector<int> intStack;
 
     for (int i = 0; i < capacity; i++){
-        cout << "Please enter the element: ";
+        cout << "Please enter the element of stack: ";
         cin >> value;
         intStack.push_back(value);
     }
