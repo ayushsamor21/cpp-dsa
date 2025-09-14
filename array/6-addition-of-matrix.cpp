@@ -34,7 +34,7 @@ int main() {
         }
     }
 
-    cout << "--Matrix 3--\n";
+    cout << "---Matrix 3---\n";
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
             cout << "the element at index["<< i <<"]["<< j <<"]: " << matrix3[i][j]<< endl;
