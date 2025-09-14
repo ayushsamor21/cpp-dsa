@@ -22,7 +22,7 @@ int main() {
         }
     }
  
-    cout << "--Enter elements of matrix 2--\n";
+    cout << "---Enter elements of matrix 2---\n";
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
             cout << "Please enter element at index["<< i <<"],["<< j <<"]: ";
